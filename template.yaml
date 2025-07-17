@@ -9,7 +9,7 @@ resources:
       name: supabase-instance
       image: Debian 11 bullseye
       flavor: a1-ram2-disk20-perf1
-      key_name: default
+      key_name: Noel_test
       networks:
         - network: Ext-Net
       user_data_format: RAW
