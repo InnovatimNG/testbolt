@@ -1,0 +1,24 @@
+heat_template_version: 2016-04-08
+
+description: Déploiement d'une instance avec Supabase
+
+resources:
+  my_instance:
+    type: OS::Nova::Server
+    properties:
+      name: supabase-instance
+      image: Debian 11
+      flavor: a1-ram2-disk20-perf1
+      key_name: default
+      networks:
+        - network: Ext-Net
+      user_data_format: RAW
+      user_data:
+        str_replace:
+          template: |
+            #!/bin/bash
+            apt update
+            apt install -y curl sudo git
+            curl -fsSL https://get.supabase.com/install.sh | sh
+            export PATH="$HOME/.supabase/bin:$PATH"
+            supabase init
