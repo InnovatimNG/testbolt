@@ -11,7 +11,7 @@ resources:
       flavor: a1-ram2-disk20-perf1
       key_name: Noel_test
       networks:
-        - network: Ext-Net
+        - network: ext-net1
       user_data_format: RAW
       user_data:
         str_replace:
