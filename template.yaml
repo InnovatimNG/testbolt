@@ -22,3 +22,4 @@ resources:
             curl -fsSL https://get.supabase.com/install.sh | sh
             export PATH="$HOME/.supabase/bin:$PATH"
             supabase init
+          params: {}
